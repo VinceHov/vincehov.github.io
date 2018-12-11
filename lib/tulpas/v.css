@@ -1,0 +1,4 @@
+:root {--theme_default_spoiler:#BBB;}
+.spoiler {position: relative;display: inline-block;}
+.spoiler:after { content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #BBBBBB;background-color: var(--theme_default_spoiler);cursor: pointer;}
+.spoiler:hover:after {display: none;}
