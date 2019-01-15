@@ -2,3 +2,18 @@
 .spoiler {position: relative;display: inline-block;}
 .spoiler:after { content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #BBBBBB;background-color: var(--theme_default_spoiler);cursor: pointer;}
 .spoiler:hover:after {display: none;}
+
+@media screen and (max-width : 144px)
+{
+  body 
+  {
+    font:10%;
+  }
+}
+@media screen and (max-width : 1440px)
+{
+  body 
+  {
+    font:100%;
+  } 
+}
