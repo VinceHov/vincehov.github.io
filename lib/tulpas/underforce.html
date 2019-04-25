@@ -506,6 +506,30 @@
 <p align="right">VinceHov 2018, vincehov.github.io</p>	
 <!--<span class="spoiler"></span>-->
 <!--Копипаста дефенс скрипт-->
+<script type="text/javascript">
+function slyLink() {
+  var istS = 'Спизженно с книги Подпольный Форсинг:'; // Слово должно находится в кавычках!
+  var copyR = '©VinceHov'; // Название сайта - слово должно находится в кавычках!
+  var body_element = document.getElementsByTagName('body')[0];
+  var choose;
+  choose = window.getSelection();
+  var myLink = document.location.href;
+  var authorLink = "
+  " + istS + ' ' + ""+myLink+"
+  " + copyR;
+  var copytext = choose + authorLink;
+  var addDiv = document.createElement('div');
+  addDiv.style.position = 'absolute';
+  addDiv.style.left = '-99999px';
+  body_element.appendChild(addDiv);
+  addDiv.innerHTML = copytext;
+  choose.selectAllChildren(addDiv);
+  window.setTimeout(function() {
+    body_element.removeChild(addDiv);
+  },0);
+}
+document.oncopy = slyLink;
+</script>
 <script language="JavaScript" src="./copypaste.js" tppabs="https://vincehov.github.io/lib/tulpas/copypaste.js"></script>
 <script language="JavaScript">
 function AddCopy() {
