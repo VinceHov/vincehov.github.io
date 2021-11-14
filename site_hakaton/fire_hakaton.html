@@ -1,11 +1,2050 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Карта пожаров Хакатон</title>
+	<title>Карта пожаров OwlsTeam</title>
+	<style type="text/css">
+		.box { position: relative; }
+		.backround_white {
+		    position:relative;
+		    z-index:100;  
+		}
+    	.gexa_background {
+	    position:relative;
+	    z-index:99;
+		}
+		.wrapper {
+			width: 80%;
+			max-width: 1080px;
+		}
+		.lining{
+			opacity: 0.5;
+		}
+		.button {
+	opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button_1{
+	opacity: 0.7;
+}
+.button_hover_1{
+	opacity: 0;
+}
+.block_1:hover .button_1{
+	opacity: 0.3;
+}
+.block_1:hover .button_hover_1{
+	opacity: 0.8;
+}
+.block_1:active .button_hover_1{
+	opacity: 0.7.0;
+}
+.button_2{
+	opacity: 0.7;
+}
+.button_hover_2{
+	opacity: 0;
+}
+.block_2:hover .button_2{
+	opacity: 0.3;
+}
+.block_2:hover .button_hover_2{
+	opacity: 0.8;
+}
+.button_3{
+	opacity: 0.7;
+}
+.button_hover_3{
+	opacity: 0;
+}
+.block_3:hover .button_3{
+	opacity: 0.3;
+}
+.block_3:hover .button_hover_3{
+	opacity: 0.8;
+}
+.button_4{
+	opacity: 0.7;
+}
+.button_hover_4{
+	opacity: 0;
+}
+.block_4:hover .button_4{
+	opacity: 0.3;
+}
+.block_4:hover .button_hover_4{
+	opacity: 0.8;
+}
+.button_5{
+	opacity: 0.7;
+}
+.button_hover_5{
+	opacity: 0;
+}
+.block_5:hover .button_5{
+	opacity: 0.3;
+}
+.block_5:hover .button_hover_5{
+	opacity: 0.8;
+}
+.button_6{
+	opacity: 0.7;
+}
+.button_hover_6{
+	opacity: 0;
+}
+.block_6:hover .button_6{
+	opacity: 0.3;
+}
+.block_6:hover .button_hover_6{
+	opacity: 0.8;
+}
+.button_7{
+	opacity: 0.7;
+}
+.button_hover_7{
+	opacity: 0;
+}
+.block_7:hover .button_7{
+	opacity: 0.3;
+}
+.block_7:hover .button_hover_7{
+	opacity: 0.8;
+}
+.button_8{
+	opacity: 0.7;
+}
+.button_hover_8{
+	opacity: 0;
+}
+.block_8:hover .button_8{
+	opacity: 0.3;
+}
+.block_8:hover .button_hover_8{
+	opacity: 0.8;
+}
+.button_9{
+	opacity: 0.7;
+}
+.button_hover_9{
+	opacity: 0;
+}
+.block_9:hover .button_9{
+	opacity: 0.3;
+}
+.block_9:hover .button_hover_9{
+	opacity: 0.8;
+}
+.button_10{
+	opacity: 0.7;
+}
+.button_hover_10{
+	opacity: 0;
+}
+.block_10:hover .button_10{
+	opacity: 0.3;
+}
+.block_10:hover .button_hover_10{
+	opacity: 0.8;
+}
+.button_11{
+	opacity: 0.7;
+}
+.button_hover_11{
+	opacity: 0;
+}
+.block_11:hover .button_11{
+	opacity: 0.3;
+}
+.block_11:hover .button_hover_11{
+	opacity: 0.8;
+}
+.button_12{
+	opacity: 0.7;
+}
+.button_hover_12{
+	opacity: 0;
+}
+.block_12:hover .button_12{
+	opacity: 0.3;
+}
+.block_12:hover .button_hover_12{
+	opacity: 0.8;
+}
+.button_13{
+	opacity: 0.7;
+}
+.button_hover_13{
+	opacity: 0;
+}
+.block_13:hover .button_13{
+	opacity: 0.3;
+}
+.block_13:hover .button_hover_13{
+	opacity: 0.8;
+}
+.button_14{
+	opacity: 0.7;
+}
+.button_hover_14{
+	opacity: 0;
+}
+.block_14:hover .button_14{
+	opacity: 0.3;
+}
+.block_14:hover .button_hover_14{
+	opacity: 0.8;
+}
+.button_15{
+	opacity: 0.7;
+}
+.button_hover_15{
+	opacity: 0;
+}
+.block_15:hover .button_15{
+	opacity: 0.3;
+}
+.block_15:hover .button_hover_15{
+	opacity: 0.8;
+}
+.button_16{
+	opacity: 0.7;
+}
+.button_hover_16{
+	opacity: 0;
+}
+.block_16:hover .button_16{
+	opacity: 0.3;
+}
+.block_16:hover .button_hover_16{
+	opacity: 0.8;
+}
+.button_17{
+	opacity: 0.7;
+}
+.button_hover_17{
+	opacity: 0;
+}
+.block_17:hover .button_17{
+	opacity: 0.3;
+}
+.block_17:hover .button_hover_17{
+	opacity: 0.8;
+}
+.button_18{
+	opacity: 0.7;
+}
+.button_hover_18{
+	opacity: 0;
+}
+.block_18:hover .button_18{
+	opacity: 0.3;
+}
+.block_18:hover .button_hover_18{
+	opacity: 0.8;
+}
+.button_19{
+	opacity: 0.7;
+}
+.button_hover_19{
+	opacity: 0;
+}
+.block_19:hover .button_19{
+	opacity: 0.3;
+}
+.block_19:hover .button_hover_19{
+	opacity: 0.8;
+}
+.button_20{
+	opacity: 0.7;
+}
+.button_hover_20{
+	opacity: 0;
+}
+.block_20:hover .button_20{
+	opacity: 0.3;
+}
+.block_20:hover .button_hover_20{
+	opacity: 0.8;
+}
+.button_21{
+	opacity: 0.7;
+}
+.button_hover_21{
+	opacity: 0;
+}
+.block_21:hover .button_21{
+	opacity: 0.3;
+}
+.block_21:hover .button_hover_21{
+	opacity: 0.8;
+}
+.button_22{
+	opacity: 0.7;
+}
+.button_hover_22{
+	opacity: 0;
+}
+.block_22:hover .button_22{
+	opacity: 0.3;
+}
+.block_22:hover .button_hover_22{
+	opacity: 0.8;
+}
+.button_23{
+	opacity: 0.7;
+}
+.button_hover_23{
+	opacity: 0;
+}
+.block_23:hover .button_23{
+	opacity: 0.3;
+}
+.block_23:hover .button_hover_23{
+	opacity: 0.8;
+}
+.button_24{
+	opacity: 0.7;
+}
+.button_hover_24{
+	opacity: 0;
+}
+.block_24:hover .button_24{
+	opacity: 0.3;
+}
+.block_24:hover .button_hover_24{
+	opacity: 0.8;
+}
+.button_25{
+	opacity: 0.7;
+}
+.button_hover_25{
+	opacity: 0;
+}
+.block_25:hover .button_25{
+	opacity: 0.3;
+}
+.block_25:hover .button_hover_25{
+	opacity: 0.8;
+}
+.button_26{
+	opacity: 0.7;
+}
+.button_hover_26{
+	opacity: 0;
+}
+.block_26:hover .button_26{
+	opacity: 0.3;
+}
+.block_26:hover .button_hover_26{
+	opacity: 0.8;
+}
+.button_27{
+	opacity: 0.7;
+}
+.button_hover_27{
+	opacity: 0;
+}
+.block_27:hover .button_27{
+	opacity: 0.3;
+}
+.block_27:hover .button_hover_27{
+	opacity: 0.8;
+}
+.button_28{
+	opacity: 0.7;
+}
+.button_hover_28{
+	opacity: 0;
+}
+.block_28:hover .button_28{
+	opacity: 0.3;
+}
+.block_28:hover .button_hover_28{
+	opacity: 0.8;
+}
+.button_29{
+	opacity: 0.7;
+}
+.button_hover_29{
+	opacity: 0;
+}
+.block_29:hover .button_29{
+	opacity: 0.3;
+}
+.block_29:hover .button_hover_29{
+	opacity: 0.8;
+}
+.button_30{
+	opacity: 0.7;
+}
+.button_hover_30{
+	opacity: 0;
+}
+.block_30:hover .button_30{
+	opacity: 0.3;
+}
+.block_30:hover .button_hover_30{
+	opacity: 0.8;
+}
+.button_31{
+	opacity: 0.7;
+}
+.button_hover_31{
+	opacity: 0;
+}
+.block_31:hover .button_31{
+	opacity: 0.3;
+}
+.block_31:hover .button_hover_31{
+	opacity: 0.8;
+}
+.button_32{
+	opacity: 0.7;
+}
+.button_hover_32{
+	opacity: 0;
+}
+.block_32:hover .button_32{
+	opacity: 0.3;
+}
+.block_32:hover .button_hover_32{
+	opacity: 0.8;
+}
+.button_33{
+	opacity: 0.7;
+}
+.button_hover_33{
+	opacity: 0;
+}
+.block_33:hover .button_33{
+	opacity: 0.3;
+}
+.block_33:hover .button_hover_33{
+	opacity: 0.8;
+}
+.button_34{
+	opacity: 0.7;
+}
+.button_hover_34{
+	opacity: 0;
+}
+.block_34:hover .button_34{
+	opacity: 0.3;
+}
+.block_34:hover .button_hover_34{
+	opacity: 0.8;
+}
+.button_35{
+	opacity: 0.7;
+}
+.button_hover_35{
+	opacity: 0;
+}
+.block_35:hover .button_35{
+	opacity: 0.3;
+}
+.block_35:hover .button_hover_35{
+	opacity: 0.8;
+}
+.button_36{
+	opacity: 0.7;
+}
+.button_hover_36{
+	opacity: 0;
+}
+.block_36:hover .button_36{
+	opacity: 0.3;
+}
+.block_36:hover .button_hover_36{
+	opacity: 0.8;
+}
+.button_37{
+	opacity: 0.7;
+}
+.button_hover_37{
+	opacity: 0;
+}
+.block_37:hover .button_37{
+	opacity: 0.3;
+}
+.block_37:hover .button_hover_37{
+	opacity: 0.8;
+}
+.button_38{
+	opacity: 0.7;
+}
+.button_hover_38{
+	opacity: 0;
+}
+.block_38:hover .button_38{
+	opacity: 0.3;
+}
+.block_38:hover .button_hover_38{
+	opacity: 0.8;
+}
+.button_39{
+	opacity: 0.7;
+}
+.button_hover_39{
+	opacity: 0;
+}
+.block_39:hover .button_39{
+	opacity: 0.3;
+}
+.block_39:hover .button_hover_39{
+	opacity: 0.8;
+}
+.button_40{
+	opacity: 0.7;
+}
+.button_hover_40{
+	opacity: 0;
+}
+.block_40:hover .button_40{
+	opacity: 0.3;
+}
+.block_40:hover .button_hover_40{
+	opacity: 0.8;
+}
+.button_41{
+	opacity: 0.7;
+}
+.button_hover_41{
+	opacity: 0;
+}
+.block_41:hover .button_41{
+	opacity: 0.3;
+}
+.block_41:hover .button_hover_41{
+	opacity: 0.8;
+}
+.button_42{
+	opacity: 0.7;
+}
+.button_hover_42{
+	opacity: 0;
+}
+.block_42:hover .button_42{
+	opacity: 0.3;
+}
+.block_42:hover .button_hover_42{
+	opacity: 0.8;
+}
+.button_43{
+	opacity: 0.7;
+}
+.button_hover_43{
+	opacity: 0;
+}
+.block_43:hover .button_43{
+	opacity: 0.3;
+}
+.block_43:hover .button_hover_43{
+	opacity: 0.8;
+}
+.button_44{
+	opacity: 0.7;
+}
+.button_hover_44{
+	opacity: 0;
+}
+.block_44:hover .button_44{
+	opacity: 0.3;
+}
+.block_44:hover .button_hover_44{
+	opacity: 0.8;
+}
+.button_45{
+	opacity: 0.7;
+}
+.button_hover_45{
+	opacity: 0;
+}
+.block_45:hover .button_45{
+	opacity: 0.3;
+}
+.block_45:hover .button_hover_45{
+	opacity: 0.8;
+}
+.button_46{
+	opacity: 0.7;
+}
+.button_hover_46{
+	opacity: 0;
+}
+.block_46:hover .button_46{
+	opacity: 0.3;
+}
+.block_46:hover .button_hover_46{
+	opacity: 0.8;
+}
+.button_47{
+	opacity: 0.7;
+}
+.button_hover_47{
+	opacity: 0;
+}
+.block_47:hover .button_47{
+	opacity: 0.3;
+}
+.block_47:hover .button_hover_47{
+	opacity: 0.8;
+}
+.button_48{
+	opacity: 0.7;
+}
+.button_hover_48{
+	opacity: 0;
+}
+.block_48:hover .button_48{
+	opacity: 0.3;
+}
+.block_48:hover .button_hover_48{
+	opacity: 0.8;
+}
+.button_49{
+	opacity: 0.7;
+}
+.button_hover_49{
+	opacity: 0;
+}
+.block_49:hover .button_49{
+	opacity: 0.3;
+}
+.block_49:hover .button_hover_49{
+	opacity: 0.8;
+}
+.button_50{
+	opacity: 0.7;
+}
+.button_hover_50{
+	opacity: 0;
+}
+.block_50:hover .button_50{
+	opacity: 0.3;
+}
+.block_50:hover .button_hover_50{
+	opacity: 0.8;
+}
+.button_51{
+	opacity: 0.7;
+}
+.button_hover_51{
+	opacity: 0;
+}
+.block_51:hover .button_51{
+	opacity: 0.3;
+}
+.block_51:hover .button_hover_51{
+	opacity: 0.8;
+}
+.button_52{
+	opacity: 0.7;
+}
+.button_hover_52{
+	opacity: 0;
+}
+.block_52:hover .button_52{
+	opacity: 0.3;
+}
+.block_52:hover .button_hover_52{
+	opacity: 0.8;
+}
+.button_53{
+	opacity: 0.7;
+}
+.button_hover_53{
+	opacity: 0;
+}
+.block_53:hover .button_53{
+	opacity: 0.3;
+}
+.block_53:hover .button_hover_53{
+	opacity: 0.8;
+}
+.button_54{
+	opacity: 0.7;
+}
+.button_hover_54{
+	opacity: 0;
+}
+.block_54:hover .button_54{
+	opacity: 0.3;
+}
+.block_54:hover .button_hover_54{
+	opacity: 0.8;
+}
+.button_55{
+	opacity: 0.7;
+}
+.button_hover_55{
+	opacity: 0;
+}
+.block_55:hover .button_55{
+	opacity: 0.3;
+}
+.block_55:hover .button_hover_55{
+	opacity: 0.8;
+}
+.button_56{
+	opacity: 0.7;
+}
+.button_hover_56{
+	opacity: 0;
+}
+.block_56:hover .button_56{
+	opacity: 0.3;
+}
+.block_56:hover .button_hover_56{
+	opacity: 0.8;
+}
+.button_57{
+	opacity: 0.7;
+}
+.button_hover_57{
+	opacity: 0;
+}
+.block_57:hover .button_57{
+	opacity: 0.3;
+}
+.block_57:hover .button_hover_57{
+	opacity: 0.8;
+}
+.button_58{
+	opacity: 0.7;
+}
+.button_hover_58{
+	opacity: 0;
+}
+.block_58:hover .button_58{
+	opacity: 0.3;
+}
+.block_58:hover .button_hover_58{
+	opacity: 0.8;
+}
+.button_59{
+	opacity: 0.7;
+}
+.button_hover_59{
+	opacity: 0;
+}
+.block_59:hover .button_59{
+	opacity: 0.3;
+}
+.block_59:hover .button_hover_59{
+	opacity: 0.8;
+}
+.button_60{
+	opacity: 0.7;
+}
+.button_hover_60{
+	opacity: 0;
+}
+.block_60:hover .button_60{
+	opacity: 0.3;
+}
+.block_60:hover .button_hover_60{
+	opacity: 0.8;
+}
+.button_61{
+	opacity: 0.7;
+}
+.button_hover_61{
+	opacity: 0;
+}
+.block_61:hover .button_61{
+	opacity: 0.3;
+}
+.block_61:hover .button_hover_61{
+	opacity: 0.8;
+}
+.button_62{
+	opacity: 0.7;
+}
+.button_hover_62{
+	opacity: 0;
+}
+.block_62:hover .button_62{
+	opacity: 0.3;
+}
+.block_62:hover .button_hover_62{
+	opacity: 0.8;
+}
+.button_63{
+	opacity: 0.7;
+}
+.button_hover_63{
+	opacity: 0;
+}
+.block_63:hover .button_63{
+	opacity: 0.3;
+}
+.block_63:hover .button_hover_63{
+	opacity: 0.8;
+}
+.button_64{
+	opacity: 0.7;
+}
+.button_hover_64{
+	opacity: 0;
+}
+.block_64:hover .button_64{
+	opacity: 0.3;
+}
+.block_64:hover .button_hover_64{
+	opacity: 0.8;
+}
+.button_65{
+	opacity: 0.7;
+}
+.button_hover_65{
+	opacity: 0;
+}
+.block_65:hover .button_65{
+	opacity: 0.3;
+}
+.block_65:hover .button_hover_65{
+	opacity: 0.8;
+}
+.button_66{
+	opacity: 0.7;
+}
+.button_hover_66{
+	opacity: 0;
+}
+.block_66:hover .button_66{
+	opacity: 0.3;
+}
+.block_66:hover .button_hover_66{
+	opacity: 0.8;
+}
+.button_67{
+	opacity: 0.7;
+}
+.button_hover_67{
+	opacity: 0;
+}
+.block_67:hover .button_67{
+	opacity: 0.3;
+}
+.block_67:hover .button_hover_67{
+	opacity: 0.8;
+}
+.button_68{
+	opacity: 0.7;
+}
+.button_hover_68{
+	opacity: 0;
+}
+.block_68:hover .button_68{
+	opacity: 0.3;
+}
+.block_68:hover .button_hover_68{
+	opacity: 0.8;
+}
+.button_69{
+	opacity: 0.7;
+}
+.button_hover_69{
+	opacity: 0;
+}
+.block_69:hover .button_69{
+	opacity: 0.3;
+}
+.block_69:hover .button_hover_69{
+	opacity: 0.8;
+}
+.button_70{
+	opacity: 0.7;
+}
+.button_hover_70{
+	opacity: 0;
+}
+.block_70:hover .button_70{
+	opacity: 0.3;
+}
+.block_70:hover .button_hover_70{
+	opacity: 0.8;
+}
+.button_71{
+	opacity: 0.7;
+}
+.button_hover_71{
+	opacity: 0;
+}
+.block_71:hover .button_71{
+	opacity: 0.3;
+}
+.block_71:hover .button_hover_71{
+	opacity: 0.8;
+}
+.button_72{
+	opacity: 0.7;
+}
+.button_hover_72{
+	opacity: 0;
+}
+.block_72:hover .button_72{
+	opacity: 0.3;
+}
+.block_72:hover .button_hover_72{
+	opacity: 0.8;
+}
+.button_73{
+	opacity: 0.7;
+}
+.button_hover_73{
+	opacity: 0;
+}
+.block_73:hover .button_73{
+	opacity: 0.3;
+}
+.block_73:hover .button_hover_73{
+	opacity: 0.8;
+}
+.button_74{
+	opacity: 0.7;
+}
+.button_hover_74{
+	opacity: 0;
+}
+.block_74:hover .button_74{
+	opacity: 0.3;
+}
+.block_74:hover .button_hover_74{
+	opacity: 0.8;
+}
+.button_75{
+	opacity: 0.7;
+}
+.button_hover_75{
+	opacity: 0;
+}
+.block_75:hover .button_75{
+	opacity: 0.3;
+}
+.block_75:hover .button_hover_75{
+	opacity: 0.8;
+}
+.button_76{
+	opacity: 0.7;
+}
+.button_hover_76{
+	opacity: 0;
+}
+.block_76:hover .button_76{
+	opacity: 0.3;
+}
+.block_76:hover .button_hover_76{
+	opacity: 0.8;
+}
+.button_77{
+	opacity: 0.7;
+}
+.button_hover_77{
+	opacity: 0;
+}
+.block_77:hover .button_77{
+	opacity: 0.3;
+}
+.block_77:hover .button_hover_77{
+	opacity: 0.8;
+}
+.button_78{
+	opacity: 0.7;
+}
+.button_hover_78{
+	opacity: 0;
+}
+.block_78:hover .button_78{
+	opacity: 0.3;
+}
+.block_78:hover .button_hover_78{
+	opacity: 0.8;
+}
+.button_79{
+	opacity: 0.7;
+}
+.button_hover_79{
+	opacity: 0;
+}
+.block_79:hover .button_79{
+	opacity: 0.3;
+}
+.block_79:hover .button_hover_79{
+	opacity: 0.8;
+}
+.button_80{
+	opacity: 0.7;
+}
+.button_hover_80{
+	opacity: 0;
+}
+.block_80:hover .button_80{
+	opacity: 0.3;
+}
+.block_80:hover .button_hover_80{
+	opacity: 0.8;
+}
+.button_81{
+	opacity: 0.7;
+}
+.button_hover_81{
+	opacity: 0;
+}
+.block_81:hover .button_81{
+	opacity: 0.3;
+}
+.block_81:hover .button_hover_81{
+	opacity: 0.8;
+}
+.button_82{
+	opacity: 0.7;
+}
+.button_hover_82{
+	opacity: 0;
+}
+.block_82:hover .button_82{
+	opacity: 0.3;
+}
+.block_82:hover .button_hover_82{
+	opacity: 0.8;
+}
+.button_83{
+	opacity: 0.7;
+}
+.button_hover_83{
+	opacity: 0;
+}
+.block_83:hover .button_83{
+	opacity: 0.3;
+}
+.block_83:hover .button_hover_83{
+	opacity: 0.8;
+}
+.button_84{
+	opacity: 0.7;
+}
+.button_hover_84{
+	opacity: 0;
+}
+.block_84:hover .button_84{
+	opacity: 0.3;
+}
+.block_84:hover .button_hover_84{
+	opacity: 0.8;
+}
+.button_85{
+	opacity: 0.7;
+}
+.button_hover_85{
+	opacity: 0;
+}
+.block_85:hover .button_85{
+	opacity: 0.3;
+}
+.block_85:hover .button_hover_85{
+	opacity: 0.8;
+}
+.button_86{
+	opacity: 0.7;
+}
+.button_hover_86{
+	opacity: 0;
+}
+.block_86:hover .button_86{
+	opacity: 0.3;
+}
+.block_86:hover .button_hover_86{
+	opacity: 0.8;
+}
+.button_87{
+	opacity: 0.7;
+}
+.button_hover_87{
+	opacity: 0;
+}
+.block_87:hover .button_87{
+	opacity: 0.3;
+}
+.block_87:hover .button_hover_87{
+	opacity: 0.8;
+}
+.button_88{
+	opacity: 0.7;
+}
+.button_hover_88{
+	opacity: 0;
+}
+.block_88:hover .button_88{
+	opacity: 0.3;
+}
+.block_88:hover .button_hover_88{
+	opacity: 0.8;
+}
+.button_89{
+	opacity: 0.7;
+}
+.button_hover_89{
+	opacity: 0;
+}
+.block_89:hover .button_89{
+	opacity: 0.3;
+}
+.block_89:hover .button_hover_89{
+	opacity: 0.8;
+}
+.button_90{
+	opacity: 0.7;
+}
+.button_hover_90{
+	opacity: 0;
+}
+.block_90:hover .button_90{
+	opacity: 0.3;
+}
+.block_90:hover .button_hover_90{
+	opacity: 0.8;
+}
+.button_91{
+	opacity: 0.7;
+}
+.button_hover_91{
+	opacity: 0;
+}
+.block_91:hover .button_91{
+	opacity: 0.3;
+}
+.block_91:hover .button_hover_91{
+	opacity: 0.8;
+}
+.button_92{
+	opacity: 0.7;
+}
+.button_hover_92{
+	opacity: 0;
+}
+.block_92:hover .button_92{
+	opacity: 0.3;
+}
+.block_92:hover .button_hover_92{
+	opacity: 0.8;
+}
+.button_93{
+	opacity: 0.7;
+}
+.button_hover_93{
+	opacity: 0;
+}
+.block_93:hover .button_93{
+	opacity: 0.3;
+}
+.block_93:hover .button_hover_93{
+	opacity: 0.8;
+}
+.button_94{
+	opacity: 0.7;
+}
+.button_hover_94{
+	opacity: 0;
+}
+.block_94:hover .button_94{
+	opacity: 0.3;
+}
+.block_94:hover .button_hover_94{
+	opacity: 0.8;
+}
+.button_95{
+	opacity: 0.7;
+}
+.button_hover_95{
+	opacity: 0;
+}
+.block_95:hover .button_95{
+	opacity: 0.3;
+}
+.block_95:hover .button_hover_95{
+	opacity: 0.8;
+}
+.button_96{
+	opacity: 0.7;
+}
+.button_hover_96{
+	opacity: 0;
+}
+.block_96:hover .button_96{
+	opacity: 0.3;
+}
+.block_96:hover .button_hover_96{
+	opacity: 0.8;
+}
+.button_97{
+	opacity: 0.7;
+}
+.button_hover_97{
+	opacity: 0;
+}
+.block_97:hover .button_97{
+	opacity: 0.3;
+}
+.block_97:hover .button_hover_97{
+	opacity: 0.8;
+}
+.button_98{
+	opacity: 0.7;
+}
+.button_hover_98{
+	opacity: 0;
+}
+.block_98:hover .button_98{
+	opacity: 0.3;
+}
+.block_98:hover .button_hover_98{
+	opacity: 0.8;
+}
+.button_99{
+	opacity: 0.7;
+}
+.button_hover_99{
+	opacity: 0;
+}
+.block_99:hover .button_99{
+	opacity: 0.3;
+}
+.block_99:hover .button_hover_99{
+	opacity: 0.8;
+}
+.button_100{
+	opacity: 0.7;
+}
+.button_hover_100{
+	opacity: 0;
+}
+.block_100:hover .button_100{
+	opacity: 0.3;
+}
+.block_100:hover .button_hover_100{
+	opacity: 0.8;
+}
+.button_101{
+	opacity: 0.7;
+}
+.button_hover_101{
+	opacity: 0;
+}
+.block_101:hover .button_101{
+	opacity: 0.3;
+}
+.block_101:hover .button_hover_101{
+	opacity: 0.8;
+}
+.button_102{
+	opacity: 0.7;
+}
+.button_hover_102{
+	opacity: 0;
+}
+.block_102:hover .button_102{
+	opacity: 0.3;
+}
+.block_102:hover .button_hover_102{
+	opacity: 0.8;
+}
+.button_103{
+	opacity: 0.7;
+}
+.button_hover_103{
+	opacity: 0;
+}
+.block_103:hover .button_103{
+	opacity: 0.3;
+}
+.block_103:hover .button_hover_103{
+	opacity: 0.8;
+}
+.button_104{
+	opacity: 0.7;
+}
+.button_hover_104{
+	opacity: 0;
+}
+.block_104:hover .button_104{
+	opacity: 0.3;
+}
+.block_104:hover .button_hover_104{
+	opacity: 0.8;
+}
+.button_105{
+	opacity: 0.7;
+}
+.button_hover_105{
+	opacity: 0;
+}
+.block_105:hover .button_105{
+	opacity: 0.3;
+}
+.block_105:hover .button_hover_105{
+	opacity: 0.8;
+}
+.button_106{
+	opacity: 0.7;
+}
+.button_hover_106{
+	opacity: 0;
+}
+.block_106:hover .button_106{
+	opacity: 0.3;
+}
+.block_106:hover .button_hover_106{
+	opacity: 0.8;
+}
+.button_107{
+	opacity: 0.7;
+}
+.button_hover_107{
+	opacity: 0;
+}
+.block_107:hover .button_107{
+	opacity: 0.3;
+}
+.block_107:hover .button_hover_107{
+	opacity: 0.8;
+}
+.button_108{
+	opacity: 0.7;
+}
+.button_hover_108{
+	opacity: 0;
+}
+.block_108:hover .button_108{
+	opacity: 0.3;
+}
+.block_108:hover .button_hover_108{
+	opacity: 0.8;
+}
+.button_109{
+	opacity: 0.7;
+}
+.button_hover_109{
+	opacity: 0;
+}
+.block_109:hover .button_109{
+	opacity: 0.3;
+}
+.block_109:hover .button_hover_109{
+	opacity: 0.8;
+}
+.button_110{
+	opacity: 0.7;
+}
+.button_hover_110{
+	opacity: 0;
+}
+.block_110:hover .button_110{
+	opacity: 0.3;
+}
+.block_110:hover .button_hover_110{
+	opacity: 0.8;
+}
+.button_111{
+	opacity: 0.7;
+}
+.button_hover_111{
+	opacity: 0;
+}
+.block_111:hover .button_111{
+	opacity: 0.3;
+}
+.block_111:hover .button_hover_111{
+	opacity: 0.8;
+}
+.button_112{
+	opacity: 0.7;
+}
+.button_hover_112{
+	opacity: 0;
+}
+.block_112:hover .button_112{
+	opacity: 0.3;
+}
+.block_112:hover .button_hover_112{
+	opacity: 0.8;
+}
+.button_113{
+	opacity: 0.7;
+}
+.button_hover_113{
+	opacity: 0;
+}
+.block_113:hover .button_113{
+	opacity: 0.3;
+}
+.block_113:hover .button_hover_113{
+	opacity: 0.8;
+}
+.button_114{
+	opacity: 0.7;
+}
+.button_hover_114{
+	opacity: 0;
+}
+.block_114:hover .button_114{
+	opacity: 0.3;
+}
+.block_114:hover .button_hover_114{
+	opacity: 0.8;
+}
+.button_115{
+	opacity: 0.7;
+}
+.button_hover_115{
+	opacity: 0;
+}
+.block_115:hover .button_115{
+	opacity: 0.3;
+}
+.block_115:hover .button_hover_115{
+	opacity: 0.8;
+}
+.button_116{
+	opacity: 0.7;
+}
+.button_hover_116{
+	opacity: 0;
+}
+.block_116:hover .button_116{
+	opacity: 0.3;
+}
+.block_116:hover .button_hover_116{
+	opacity: 0.8;
+}
+.button_117{
+	opacity: 0.7;
+}
+.button_hover_117{
+	opacity: 0;
+}
+.block_117:hover .button_117{
+	opacity: 0.3;
+}
+.block_117:hover .button_hover_117{
+	opacity: 0.8;
+}
+.button_118{
+	opacity: 0.7;
+}
+.button_hover_118{
+	opacity: 0;
+}
+.block_118:hover .button_118{
+	opacity: 0.3;
+}
+.block_118:hover .button_hover_118{
+	opacity: 0.8;
+}
+.button_119{
+	opacity: 0.7;
+}
+.button_hover_119{
+	opacity: 0;
+}
+.block_119:hover .button_119{
+	opacity: 0.3;
+}
+.block_119:hover .button_hover_119{
+	opacity: 0.8;
+}
+.button_120{
+	opacity: 0.7;
+}
+.button_hover_120{
+	opacity: 0;
+}
+.block_120:hover .button_120{
+	opacity: 0.3;
+}
+.block_120:hover .button_hover_120{
+	opacity: 0.8;
+}
+
+	</style>
 </head>
 <body>
+<div class="wrapper" style="width: 100%; max-width: 1080px;">
+	<img src="images/background_whie.png"  style="position: absolute; top:0px; left: 0px;">
+	<img src="images/text_full.png" style="position: absolute; top: 50px; left: 20px; width: 15%;">
+	<img src="images/gexa_backround.png" style="position: absolute; top: 0px; right: 0px;">
+	<img src="images/map_ground.png" style="position: absolute; top: 108px; right: 284px;">
+	<img src="images/map_grey_background.png" style="position: absolute; top: 108px; right: 284px;">
+	<!-- <img src="images/gexa_normal.png" style="position: absolute; top: 108px; right: 284px;"> -->
+	<img src="images/gexa_default.png" style="position: absolute; top: 5px; right: 0px;">
+	<img src="images/gexa_grey_vision.png" style="position: absolute; top: 5px; right: 0px;">
+	<img src="images/lining.png" style="position: absolute; top: 5px; right: 0px;" class="lining">
+<div>
 
-<img src="images/map_default.gif" width="1900" height="1000">
+		<img src="images/1gexa_fire.png" style="position: absolute; top: 272px; right: 352px;" class="button_1" >
+
+	<div class="block_1" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 1'; document.getElementsByTagName('video')[0].setAttribute('src', 'src/1.mp4');modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 249px; right: 317px;" class="button_1" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 249px; right: 317px;" class="button_hover_1">
+	</div>
+	<div class="block_2" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 2'; document.getElementsByTagName('video')[0].setAttribute('src', 'src/2.mp4'); modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 252px; right: 389px;" class="button_2" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 252px; right: 389px;" class="button_hover_2">
+	</div>
+	<div class="block_3" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 3'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 378px; right: 386px;" class="button_3" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 378px; right: 386px;" class="button_hover_3">
+	</div>
+	<div class="block_4" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 4'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 505px; right: 381px;" class="button_4" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 505px; right: 381px;" class="button_hover_4">
+	</div>
+	<div class="block_5" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 5'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 255px; right: 461px;" class="button_5" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 255px; right: 461px;" class="button_hover_5">
+	</div>
+	<div class="block_6" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 6'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 380px; right: 458px;" class="button_6" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 380px; right: 458px;" class="button_hover_6">
+	</div>
+	<div class="block_7" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 7'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 505px; right: 453px;" class="button_7" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 505px; right: 453px;" class="button_hover_7">
+	</div>
+	<div class="block_8" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 8'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 634px; right: 449px;" class="button_8" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 634px; right: 449px;" class="button_hover_8">
+	</div>
+	<div class="block_9" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 9'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 761px; right: 443px;" class="button_9" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 761px; right: 443px;" class="button_hover_9">
+	</div>
+	<div class="block_10" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 10'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 135px; right: 537px;" class="button_10" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 135px; right: 537px;" class="button_hover_10">
+	</div>
+	<div class="block_11" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 11'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 260px; right: 533px;" class="button_11" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 260px; right: 533px;" class="button_hover_11">
+	</div>
+	<div class="block_12" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 12'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 384px; right: 530px;" class="button_12" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 384px; right: 530px;" class="button_hover_12">
+	</div>
+	<div class="block_13" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 13'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 510px; right: 525px;" class="button_13" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 510px; right: 525px;" class="button_hover_13">
+	</div>
+	<div class="block_14" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 14'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 636px; right: 521px;" class="button_14" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 636px; right: 521px;" class="button_hover_14">
+	</div>
+	<div class="block_15" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 15'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 763px; right: 515px;" class="button_15" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 763px; right: 515px;" class="button_hover_15">
+	</div>
+	<div class="block_16" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 16'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 137px; right: 610px;" class="button_16" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 137px; right: 610px;" class="button_hover_16">
+	</div>
+	<div class="block_17" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 17'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 262px; right: 606px;" class="button_17" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 262px; right: 606px;" class="button_hover_17">
+	</div>
+	<div class="block_18" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 18'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 386px; right: 603px;" class="button_18" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 386px; right: 603px;" class="button_hover_18">
+	</div>
+	<div class="block_19" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 19'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 512px; right: 598px;" class="button_19" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 512px; right: 598px;" class="button_hover_19">
+	</div>
+	<div class="block_20" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 20'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 640px; right: 594px;" class="button_20" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 640px; right: 594px;" class="button_hover_20">
+	</div>
+	<div class="block_21" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 21'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 767px; right: 588px;" class="button_21" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 767px; right: 588px;" class="button_hover_21">
+	</div>
+	<div class="block_22" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 22'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 263px; right: 678px;" class="button_22" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 263px; right: 678px;" class="button_hover_22">
+	</div>
+	<div class="block_23" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 23'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 389px; right: 675px;" class="button_23" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 389px; right: 675px;" class="button_hover_23">
+	</div>
+	<div class="block_24" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 24'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 515px; right: 670px;" class="button_24" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 515px; right: 670px;" class="button_hover_24">
+	</div>
+	<div class="block_25" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 25'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 641px; right: 666px;" class="button_25" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 641px; right: 666px;" class="button_hover_25">
+	</div>
+	<div class="block_26" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 26'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 768px; right: 660px;" class="button_26" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 768px; right: 660px;" class="button_hover_26">
+	</div>
+	<div class="block_27" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 27'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 267px; right: 749px;" class="button_27" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 267px; right: 749px;" class="button_hover_27">
+	</div>
+	<div class="block_28" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 28'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 391px; right: 746px;" class="button_28" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 391px; right: 746px;" class="button_hover_28">
+	</div>
+	<div class="block_29" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 29'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 517px; right: 741px;" class="button_29" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 517px; right: 741px;" class="button_hover_29">
+	</div>
+	<div class="block_30" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 30'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 645px; right: 737px;" class="button_30" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 645px; right: 737px;" class="button_hover_30">
+	</div>
+	<div class="block_31" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 31'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 772px; right: 731px;" class="button_31" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 772px; right: 731px;" class="button_hover_31">
+	</div>
+	<div class="block_32" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 32'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 270px; right: 822px;" class="button_32" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 270px; right: 822px;" class="button_hover_32">
+	</div>
+	<div class="block_33" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 33'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 396px; right: 819px;" class="button_33" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 396px; right: 819px;" class="button_hover_33">
+	</div>
+	<div class="block_34" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 34'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 522px; right: 814px;" class="button_34" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 522px; right: 814px;" class="button_hover_34">
+	</div>
+	<div class="block_35" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 35'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 648px; right: 810px;" class="button_35" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 648px; right: 810px;" class="button_hover_35">
+	</div>
+	<div class="block_36" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 36'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 772px; right: 804px;" class="button_36" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 772px; right: 804px;" class="button_hover_36">
+	</div>
+	<div class="block_37" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 37'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 398px; right: 891px;" class="button_37" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 398px; right: 891px;" class="button_hover_37">
+	</div>
+	<div class="block_38" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 38'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 524px; right: 886px;" class="button_38" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 524px; right: 886px;" class="button_hover_38">
+	</div>
+	<div class="block_39" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 39'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 652px; right: 882px;" class="button_39" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 652px; right: 882px;" class="button_hover_39">
+	</div>
+	<div class="block_40" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 40'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 527px; right: 958px;" class="button_40" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 527px; right: 958px;" class="button_hover_40">
+	</div>
+	<div class="block_41" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 41'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 653px; right: 954px;" class="button_41" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 653px; right: 954px;" class="button_hover_41">
+	</div>
+	<div class="block_42" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 42'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 531px; right: 1030px;" class="button_42" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 531px; right: 1030px;" class="button_hover_42">
+	</div>
+	<div class="block_43" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 43'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 657px; right: 1026px;" class="button_43" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 657px; right: 1026px;" class="button_hover_43">
+	</div>
+	<div class="block_44" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 44'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 535px; right: 1102px;" class="button_44" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 535px; right: 1102px;" class="button_hover_44">
+	</div>
+	<div class="block_45" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 45'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 661px; right: 1098px;" class="button_45" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 661px; right: 1098px;" class="button_hover_45">
+	</div>
+	<div class="block_46" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 46'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 539px; right: 1174px;" class="button_46" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 539px; right: 1174px;" class="button_hover_46">
+	</div>
+	<div class="block_47" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 47'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 663px; right: 1170px;" class="button_47" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 663px; right: 1170px;" class="button_hover_47">
+	</div>
+	<div class="block_48" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 48'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 541px; right: 1246px;" class="button_48" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 541px; right: 1246px;" class="button_hover_48">
+	</div>
+	<div class="block_49" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 49'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 667px; right: 1242px;" class="button_49" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 667px; right: 1242px;" class="button_hover_49">
+	</div>
+	<div class="block_50" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 50'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 790px; right: 1240px;" class="button_50" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 790px; right: 1240px;" class="button_hover_50">
+	</div>
+	<div class="block_51" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 51'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 543px; right: 1320px;" class="button_51" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 543px; right: 1320px;" class="button_hover_51">
+	</div>
+	<div class="block_52" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 52'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 668px; right: 1315px;" class="button_52" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 668px; right: 1315px;" class="button_hover_52">
+	</div>
+	<div class="block_53" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 53'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 795px; right: 1311px;" class="button_53" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 795px; right: 1311px;" class="button_hover_53">
+	</div>
+	<div class="block_54" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 54'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 545px; right: 1390px;" class="button_54" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 545px; right: 1390px;" class="button_hover_54">
+	</div>
+	<div class="block_55" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 55'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 671px; right: 1387px;" class="button_55" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 671px; right: 1387px;" class="button_hover_55">
+	</div>
+	<div class="block_56" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 56'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 798px; right: 1383px;" class="button_56" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 798px; right: 1383px;" class="button_hover_56">
+	</div>
+	<div class="block_57" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 57'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 674px; right: 1459px;" class="button_57" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 674px; right: 1459px;" class="button_hover_57">
+	</div>
+	<div class="block_58" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 58'; document.getElementsByTagName('video')[0].setAttribute('src', 'src/3.mp4');modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 314px; right: 351px;" class="button_58" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 314px; right: 351px;" class="button_hover_58">
+	</div>
+	<div class="block_59" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 59'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 440px; right: 346px;" class="button_59" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 440px; right: 346px;" class="button_hover_59">
+	</div>
+	<div class="block_60" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 60'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 192px; right: 426px;" class="button_60" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 192px; right: 426px;" class="button_hover_60">
+	</div>
+	<div class="block_61" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 61'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 317px; right: 423px;" class="button_61" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 317px; right: 423px;" class="button_hover_61">
+	</div>
+	<div class="block_62" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 62'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 443px; right: 420px;" class="button_62" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 443px; right: 420px;" class="button_hover_62">
+	</div>
+	<div class="block_63" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 63'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 570px; right: 415px;" class="button_63" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 570px; right: 415px;" class="button_hover_63">
+	</div>
+	<div class="block_64" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 64'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 195px; right: 498px;" class="button_64" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 195px; right: 498px;" class="button_hover_64">
+	</div>
+	<div class="block_65" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 65'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 320px; right: 495px;" class="button_65" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 320px; right: 495px;" class="button_hover_65">
+	</div>
+	<div class="block_66" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 66'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 445px; right: 492px;" class="button_66" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 445px; right: 492px;" class="button_hover_66">
+	</div>
+	<div class="block_67" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 67'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 570px; right: 487px;" class="button_67" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 570px; right: 487px;" class="button_hover_67">
+	</div>
+	<div class="block_68" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 68'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 699px; right: 483px;" class="button_68" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 699px; right: 483px;" class="button_hover_68">
+	</div>
+	<div class="block_69" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 69'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 826px; right: 477px;" class="button_69" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 826px; right: 477px;" class="button_hover_69">
+	</div>
+	<div class="block_70" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 70'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 200px; right: 571px;" class="button_70" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 200px; right: 571px;" class="button_hover_70">
+	</div>
+	<div class="block_71" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 71'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 325px; right: 567px;" class="button_71" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 325px; right: 567px;" class="button_hover_71">
+	</div>
+	<div class="block_72" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 72'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 449px; right: 564px;" class="button_72" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 449px; right: 564px;" class="button_hover_72">
+	</div>
+	<div class="block_73" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 73'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 575px; right: 559px;" class="button_73" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 575px; right: 559px;" class="button_hover_73">
+	</div>
+	<div class="block_74" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 74'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 701px; right: 555px;" class="button_74" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 701px; right: 555px;" class="button_hover_74">
+	</div>
+	<div class="block_75" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 75'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 828px; right: 549px;" class="button_75" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 828px; right: 549px;" class="button_hover_75">
+	</div>
+	<div class="block_76" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 76'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 202px; right: 644px;" class="button_76" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 202px; right: 644px;" class="button_hover_76">
+	</div>
+	<div class="block_77" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 77'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 327px; right: 640px;" class="button_77" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 327px; right: 640px;" class="button_hover_77">
+	</div>
+	<div class="block_78" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 78'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 451px; right: 637px;" class="button_78" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 451px; right: 637px;" class="button_hover_78">
+	</div>
+	<div class="block_79" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 79'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 577px; right: 632px;" class="button_79" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 577px; right: 632px;" class="button_hover_79">
+	</div>
+	<div class="block_80" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 80'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 705px; right: 628px;" class="button_80" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 705px; right: 628px;" class="button_hover_80">
+	</div>
+	<div class="block_81" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 81'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 832px; right: 622px;" class="button_81" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 832px; right: 622px;" class="button_hover_81">
+	</div>
+	<div class="block_82" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 82'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 204px; right: 716px;" class="button_82" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 204px; right: 716px;" class="button_hover_82">
+	</div>
+	<div class="block_83" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 83'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 328px; right: 712px;" class="button_83" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 328px; right: 712px;" class="button_hover_83">
+	</div>
+	<div class="block_84" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 84'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 454px; right: 709px;" class="button_84" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 454px; right: 709px;" class="button_hover_84">
+	</div>
+	<div class="block_85" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 85'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 580px; right: 704px;" class="button_85" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 580px; right: 704px;" class="button_hover_85">
+	</div>
+	<div class="block_86" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 86'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 706px; right: 700px;" class="button_86" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 706px; right: 700px;" class="button_hover_86">
+	</div>
+	<div class="block_87" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 87'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 833px; right: 694px;" class="button_87" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 833px; right: 694px;" class="button_hover_87">
+	</div>
+	<div class="block_88" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 88'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 207px; right: 789px;" class="button_88" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 207px; right: 789px;" class="button_hover_88">
+	</div>
+	<div class="block_89" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 89'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 332px; right: 783px;" class="button_89" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 332px; right: 783px;" class="button_hover_89">
+	</div>
+	<div class="block_90" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 90'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 456px; right: 780px;" class="button_90" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 456px; right: 780px;" class="button_hover_90">
+	</div>
+	<div class="block_91" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 91'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 582px; right: 775px;" class="button_91" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 582px; right: 775px;" class="button_hover_91">
+	</div>
+	<div class="block_92" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 92'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 710px; right: 771px;" class="button_92" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 710px; right: 771px;" class="button_hover_92">
+	</div>
+	<div class="block_93" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 93'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 837px; right: 765px;" class="button_93" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 837px; right: 765px;" class="button_hover_93">
+	</div>
+	<div class="block_94" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 94'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 335px; right: 856px;" class="button_94" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 335px; right: 856px;" class="button_hover_94">
+	</div>
+	<div class="block_95" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 95'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 461px; right: 853px;" class="button_95" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 461px; right: 853px;" class="button_hover_95">
+	</div>
+	<div class="block_96" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 96'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 587px; right: 848px;" class="button_96" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 587px; right: 848px;" class="button_hover_96">
+	</div>
+	<div class="block_97" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 97'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 713px; right: 844px;" class="button_97" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 713px; right: 844px;" class="button_hover_97">
+	</div>
+<!-- 	<div class="block_98" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 98'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 837px; right: 838px;" class="button_98" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 837px; right: 838px;" class="button_hover_98">
+	</div> -->
+	<div class="block_99" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 99'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 463px; right: 925px;" class="button_99" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 463px; right: 925px;" class="button_hover_99">
+	</div>
+	<div class="block_100" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 100'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 589px; right: 920px;" class="button_100" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 589px; right: 920px;" class="button_hover_100">
+	</div>
+	<div class="block_101" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 101'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 717px; right: 916px;" class="button_101" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 717px; right: 916px;" class="button_hover_101">
+	</div>
+	<div class="block_102" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 102'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 592px; right: 992px;" class="button_102" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 592px; right: 992px;" class="button_hover_102">
+	</div>
+	<div class="block_103" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 103'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 718px; right: 988px;" class="button_103" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 718px; right: 988px;" class="button_hover_103">
+	</div>
+	<div class="block_104" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 104'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 595px; right: 1064px;" class="button_104" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 595px; right: 1064px;" class="button_hover_104">
+	</div>
+	<div class="block_105" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 105'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 722px; right: 1061px;" class="button_105" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 722px; right: 1061px;" class="button_hover_105">
+	</div>
+	<div class="block_106" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 106'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 598px; right: 1136px;" class="button_106" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 598px; right: 1136px;" class="button_hover_106">
+	</div>
+	<div class="block_107" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 107'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 724px; right: 1133px;" class="button_107" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 724px; right: 1133px;" class="button_hover_107">
+	</div>
+	<div class="block_108" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 108'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 604px; right: 1208px;" class="button_108" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 604px; right: 1208px;" class="button_hover_108">
+	</div>
+	<div class="block_109" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 109'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 728px; right: 1204px;" class="button_109" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 728px; right: 1204px;" class="button_hover_109">
+	</div>
+	<div class="block_110" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 110'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 606px; right: 1280px;" class="button_110" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 606px; right: 1280px;" class="button_hover_110">
+	</div>
+	<div class="block_111" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 111'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 732px; right: 1276px;" class="button_111" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 732px; right: 1276px;" class="button_hover_111">
+	</div>
+<!-- 	<div class="block_112" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 112'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 855px; right: 1274px;" class="button_112" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 855px; right: 1274px;" class="button_hover_112">
+	</div> -->
+	<div class="block_113" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 113'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 608px; right: 1354px;" class="button_113" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 608px; right: 1354px;" class="button_hover_113">
+	</div>
+	<div class="block_114" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 114'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 733px; right: 1349px;" class="button_114" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 733px; right: 1349px;" class="button_hover_114">
+	</div>
+	<div class="block_115" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 115'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 860px; right: 1345px;" class="button_115" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 860px; right: 1345px;" class="button_hover_115">
+	</div>
+	<div class="block_116" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 116'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 610px; right: 1424px;" class="button_116" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 610px; right: 1424px;" class="button_hover_116">
+	</div>
+	<div class="block_117" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 117'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 736px; right: 1421px;" class="button_117" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 736px; right: 1421px;" class="button_hover_117">
+	</div>
+	<div class="block_118" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 118'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 863px; right: 1417px;" class="button_118" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 863px; right: 1417px;" class="button_hover_118">
+	</div>
+	<div class="block_119" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 119'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 610px; right: 1497px;" class="button_119" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 610px; right: 1497px;" class="button_hover_119">
+	</div>
+	<div class="block_120" onClick="javascript:document.getElementsByTagName('p')[0].textContent = 'Камера 120'; modal.style.display = 'block'">
+		<img src="images/1gexa_red.png" style="position: absolute; top: 739px; right: 1493px;" class="button_120" >
+		<img src="images/1gexa_nonred.png" style="position: absolute; top: 739px; right: 1493px;" class="button_hover_120">
+	</div>
+	
+	
+
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <p calss="text_p">sample_text</p>
+    <video width="400" height="300" controls="controls">
+    	<source src="src/4.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' autoplay="True">
+    </video>
+    <span class="close">&times;</span>
+    
+  </div>
+
+</div>
+	<script>
+
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+
+/*btn.onclick = function() {
+  modal.style.display = "block";
+}*/
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
 
 
 </body>
